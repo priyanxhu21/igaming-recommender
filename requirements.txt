@@ -1,0 +1,9 @@
+﻿joblib
+kagglehub
+numpy
+pandas
+plotly
+scikit-learn
+streamlit
+pytz==2026.1.post1
+watchdog==6.0.0
