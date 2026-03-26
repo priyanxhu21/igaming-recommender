@@ -1,9 +1,6 @@
-﻿joblib
-kagglehub
-numpy
+﻿streamlit==1.32.0
 pandas
-plotly
+numpy
 scikit-learn
-streamlit
-pytz==2026.1.post1
-watchdog==6.0.0
+plotly
+altair==4.2.2
