@@ -4,10 +4,22 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 KAGGLE_DATASET_HANDLE = "igormerlinicomposer/online-casino-games-dataset-1-2m-records"
+APP_DATA_COLUMNS = [
+    "casino",
+    "game",
+    "provider",
+    "rtp",
+    "volatility",
+    "min_bet",
+    "game_type",
+    "free_spins_feature",
+    "bonus_buy_available",
+    "max_multiplier",
+]
 
 
-def load_data(path):
-    df = pd.read_csv(path)
+def load_data(path, usecols=None, nrows=None):
+    df = pd.read_csv(path, usecols=usecols, nrows=nrows)
     return df
 
 
@@ -47,6 +59,12 @@ def resolve_dataset_path(dataset_path=None):
 def load_kaggle_dataset(dataset_path=None):
     dataset_file = resolve_dataset_path(dataset_path)
     return load_data(dataset_file)
+
+
+def load_app_dataset(dataset_path=None, max_rows=None):
+    dataset_file = resolve_dataset_path(dataset_path)
+    df = load_data(dataset_file, usecols=APP_DATA_COLUMNS, nrows=max_rows)
+    return df, dataset_file
 
 
 def _to_binary(series):
