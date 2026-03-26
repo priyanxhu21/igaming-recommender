@@ -4,3 +4,4 @@ numpy==1.26.4
 scikit-learn
 plotly
 altair==4.2.2
+protobuf>=5.0.0
